@@ -1,16 +1,17 @@
 #!/usr/bin/env python
 
-
 import os
 import sys
 import time
 #import re
 import threading
 import subprocess
+import Tkinter
+import tkMessageBox
 
 
 def monitor(limit, unit):
-	#threading.Timer(4.0, monitor).start()
+	
 	check="vnstat"
 	#os.system(check)
   	proc=subprocess.Popen(check, shell=True, stdout=subprocess.PIPE)
@@ -31,9 +32,22 @@ def monitor(limit, unit):
 	if unit==l[5] and limit<l[4]:
 		print "\nnetwork usage limit exceeded!\n"
 
+		top = Tkinter.Tk()
+		def hello():
+			tkMessageBox.showinfo("Warning!", "Network usage limit exceeded!!!!")
+		B1 = Tkinter.Button(top, text = "Warning", command = hello)
+		B1.pack()
+		top.mainloop()
+
+
+	arg=[limit,unit]
+
+	threading.Timer(60.0, monitor, arg).start()
+
 
 #def callMonitor(limit, unit):
-#	threading.Timer(4.0, callMonitor).start()
+#	t=threading.Timer(4.0, monitor(limit, unit))
+#	t.start()
 #	monitor(limit, unit)
 	
 
