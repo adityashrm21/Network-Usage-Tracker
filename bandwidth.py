@@ -16,7 +16,7 @@ def monitor(limit, unit):
   	proc=subprocess.Popen(check, shell=True, stdout=subprocess.PIPE)
   	output=proc.communicate()
   	output=str(output)
-  	print output
+  	#print output
   	l = []
 	for t in output.split():
 		try:
@@ -27,7 +27,7 @@ def monitor(limit, unit):
 			
 		except ValueError:
 			pass
-	print l
+	#print l
 	if unit==l[5] and limit<l[4]:
 		print "\nnetwork usage limit exceeded!\n"
 
