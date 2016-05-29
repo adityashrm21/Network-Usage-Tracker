@@ -1,5 +1,6 @@
-# Network-Usage-Calculator
-A python script to set a limit and know whether your network usage has exceeded it
+# Network-Usage-Tracker
+A python script to keep a track of network usage and notify you if it exceeds a specified limit
+(only support for wifi right now)
 
 ### Requirements:
 
@@ -25,3 +26,5 @@ to get the list of running processes and then get the pid of the process you wan
 ```bash
 $ kill pid
 ```
+To do:
+  1. add support for ethernet network usage
