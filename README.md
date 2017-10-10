@@ -24,7 +24,7 @@ $ ps -ef
 to get the list of running processes and then get the pid of the process you want to kill and do :
 
 ```bash
-$ kill pid
+$ sudo kill pid
 ```
 To do:
   1. add support for ethernet network usage
